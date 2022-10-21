@@ -62,22 +62,25 @@ let macchine = [
     },
 ];
 
-let macchineGpl = [];
-let macchineBenzina = [];
-let macchineDiesel = [];
-
+//Verifico e stampo le macchine
 for (let i = 0; i < macchine.length; i++) {
 
-    if (macchine.alimentazione == "Gpl") {
-        macchineGpl.push = macchine.marca;
-    } else if (macchine.alimentazione == Diesel) {
-        macchineDiesel.push = macchine.marca;
-    } else {
-        macchineBenzina.push = macchine.marca;
-    }  
-    
+    let macchineGpl =  macchine.filter(function(gpl) {
+        return gpl.alimentazione == "Gpl";
+      });
+      
     console.log(macchineGpl);
-    console.log(macchineDiesel);
+
+    let macchineBenzina =  macchine.filter(function(benzina) {
+        return benzina.alimentazione == "Benzina";
+      });
+      
     console.log(macchineBenzina);
+
+    let macchineDiesel =  macchine.filter(function(diesel) {
+        return diesel.alimentazione == "Diesel";
+      });
+      
+    console.log(macchineDiesel);
 
 }
